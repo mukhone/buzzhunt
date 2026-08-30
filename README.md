@@ -12,6 +12,16 @@
 
 **BuzzHunt helps you track how your brand appears across AI answers, source citations, and community discussions.**
 
+## 🎬 Demo
+
+<p align="center">
+  <a href="https://youtu.be/RppMPMKAQWs">
+    <img src="https://img.youtube.com/vi/RppMPMKAQWs/hqdefault.jpg" alt="Watch the BuzzHunt demo" width="560">
+  </a>
+  <br>
+  <a href="https://youtu.be/RppMPMKAQWs"><b>▶ Watch the demo on YouTube</b></a>
+</p>
+
 Built by **[Mukh.1](https://mukh.one)**, BuzzHunt is an open-source starting point for AEO/GEO workflows: configure platforms, add keywords or prompts, run scheduled scrapers, receive email alerts, and analyze which domains are influencing AI search visibility.
 
 BuzzHunt monitors both community platforms like Reddit and Quora, and AI-powered search surfaces like Perplexity, ChatGPT Search, and Google AI. Users sign up, pick platforms, enter keywords or prompts, and the system automatically scrapes those platforms on a schedule. When new mentions or citations are found, the user gets an email alert and can inspect citation trends, top source domains, and competitor co-mentions in the analytics dashboard.
