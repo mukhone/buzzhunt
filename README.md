@@ -1,13 +1,11 @@
 <p align="center">
-  <a href="https://mukh.one">
-    <img src="https://mukh.one/assets/landing%20page/1.svg" alt="Mukh.1" width="200">
-  </a>
+  <img src="frontend/assets/images/Buzzhuntlogo.svg" alt="BuzzHunt" width="300">
 </p>
 
 # BuzzHunt-OSS - Open-Source AI Search Optimization
 
 <p align="center">
-  <a href="https://mukh.one"><b>🌐 mukh.one</b></a>
+  by <a href="https://mukh.one"><b>Mukh.1 · mukh.one</b></a>
 </p>
 
 **BuzzHunt helps you track how your brand appears across AI answers, source citations, and community discussions.**
