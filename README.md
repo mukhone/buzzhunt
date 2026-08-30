@@ -6,6 +6,8 @@
 
 <p align="center">
   by <a href="https://mukh.one"><b>Mukh.1 · mukh.one</b></a>
+  &nbsp;•&nbsp;
+  <a href="https://mukh.one/ai-visibility-engine/"><b>AI Visibility Engine (hosted)</b></a>
 </p>
 
 **BuzzHunt helps you track how your brand appears across AI answers, source citations, and community discussions.**
@@ -129,6 +131,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 This project is built and maintained by **[Mukh.1](https://mukh.one)**.
 
+- **[AI Visibility Engine](https://mukh.one/ai-visibility-engine/)** - The hosted version of BuzzHunt
 - **[AgentForge](https://agentforge.mukh1.com)** - Build AI agents in plain English
 - **[VoicyAgent](https://voicyagent.mukh1.com)** - Build and deploy AI voice agents
 - **[Mukh.1 Technology](https://mukh.one/technology/)** - AI agent infrastructure
