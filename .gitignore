@@ -1,0 +1,92 @@
+# Ignore the Live folder
+Live/
+
+# v0 (Chrome profile data)
+v0/
+
+# v1 (old Live implementation)
+v1/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Python cache and environment files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*$py.class
+*.so
+.Python
+scrapers/__pycache__/
+
+# Virtual environment folders
+venv/
+env/
+.venv/
+ENV/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+scraper.log
+
+# Data files (from old implementation)
+data/
+data/*.json
+old_data/
+
+# Chrome driver and profiles
+scrapers/.wdm/
+scrapers/chrome_profile_*/
+chrome_profile_*/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Redis dump
+dump.rdb
+
+# Old files (legacy Python implementation)
+app.py
+emailer.py
+scraper.py
+chatgpt.txt
+
+# Test artifacts (keep test scripts, ignore outputs)
+tests/scrapers/json_output_scrapper/
+tests/scrapers/*.html
+*.html.bak
+
+# Demo recording artifacts
+demo/vo_*/
+demo/_raw_*.webm
+demo/marks_*.json
+demo/*.mp4
+# ...but keep the published demo video
+!demo/buzzhunt-complete-demo-sarah-english.mp4
+
+# Scraper JSON output files
+scrapers/json_output_scrapper/*.json
+
+# Claude Code settings
+.claude/

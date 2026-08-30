@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>BuzzHunt - AI Search Engine Optimization</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-left">
+      <div class="login-content">
+        <div class="logo-section">
+          <img src="/assets/images/Buzzhuntlogo.svg" alt="BuzzHunt" class="login-logo">
+          <a href="https://mukh.one" class="mukh-brand" target="_blank" rel="noopener noreferrer">
+            <img src="https://mukh.one/assets/landing%20page/1.svg" alt="Mukh.1">
+            <span>by Mukh.1</span>
+          </a>
+          <p class="tagline">AI Search Engine Optimization Platform</p>
+          <p class="subtitle">Track your brand visibility across Perplexity AI, ChatGPT Search, Google AI Overview, Reddit & Quora</p>
+        </div>
+
+        <div id="loginForm" class="form-container">
+          <h2>Welcome Back</h2>
+          <p class="form-subtitle">Sign in to your account</p>
+          <form id="loginFormElement">
+            <div class="form-group">
+              <label for="loginEmail">Email Address</label>
+              <input type="email" id="loginEmail" name="email" required autocomplete="email" placeholder="Email address">
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" name="password" required autocomplete="current-password" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+            <div id="loginError" class="error-message"></div>
+          </form>
+          <p class="switch-form">
+            Don't have an account?
+            <a href="#" id="showSignup" class="link-primary">Create one now</a>
+          </p>
+        </div>
+
+        <div id="signupForm" class="form-container" style="display: none;">
+          <h2>Create Account</h2>
+          <p class="form-subtitle">Start tracking your AI visibility today</p>
+          <form id="signupFormElement">
+            <div class="form-group">
+              <label for="signupEmail">Email Address</label>
+              <input type="email" id="signupEmail" name="email" required autocomplete="email" placeholder="Email address">
+            </div>
+            <div class="form-group">
+              <label for="signupPassword">Password</label>
+              <input type="password" id="signupPassword" name="password" required autocomplete="new-password" minlength="6" placeholder="Minimum 6 characters">
+            </div>
+            <div class="form-group">
+              <label for="signupConfirmPassword">Confirm Password</label>
+              <input type="password" id="signupConfirmPassword" name="confirmPassword" required autocomplete="new-password" placeholder="Re-enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+            <div id="signupError" class="error-message"></div>
+          </form>
+          <p class="switch-form">
+            Already have an account?
+            <a href="#" id="showLogin" class="link-primary">Sign in here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-right">
+      <div class="features-showcase">
+        <div class="feature-header">
+          <h3>Why BuzzHunt?</h3>
+          <p>The first platform built for AI Search Engine Optimization</p>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon gradient-purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <div>
+              <h4>AI Platform Monitoring</h4>
+              <p>Track citations across Perplexity, ChatGPT Search, and Google AI</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon gradient-blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
+            </div>
+            <div>
+              <h4>Citation Analytics</h4>
+              <p>Visualize trends, track domains, and measure AI visibility</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon gradient-green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+            </div>
+            <div>
+              <h4>Competitor Intelligence</h4>
+              <p>See when competitors are mentioned alongside your brand</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon gradient-orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <h4>Reddit & Quora Tracking</h4>
+              <p>Monitor keyword mentions across social platforms</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-section">
+          <div class="stat-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">AI Platforms</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Monitoring</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Real-time</div>
+            <div class="stat-label">Alerts</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/auth.js"></script>
+</body>
+</html>

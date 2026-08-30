@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Dashboard - BuzzHunt</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <img src="/assets/images/Buzzhuntlogo.svg" alt="BuzzHunt" class="logo-full">
+        <a href="https://mukh.one" class="mukh-brand nav-mukh-brand" target="_blank" rel="noopener noreferrer">
+          <img src="https://mukh.one/assets/landing%20page/1.svg" alt="Mukh.1">
+          <span>by Mukh.1</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/dashboard.html" class="active">Platforms</a>
+        <a href="/analytics.html">Analytics</a>
+      </div>
+      <div class="nav-user">
+        <span id="userEmail"></span>
+        <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="dashboard-header">
+      <h2>My Platforms</h2>
+    </div>
+
+    <div id="platformsContainer" class="platforms-grid">
+      <!-- Platforms will be loaded dynamically -->
+    </div>
+
+    <div class="add-platform-section">
+      <h3>Add New Platform</h3>
+      <div id="availablePlatforms" class="available-platforms">
+        <!-- Available platforms will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for managing keywords -->
+  <div id="keywordModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">Manage Keywords</h3>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div id="modalPlatformInfo" class="platform-info"></div>
+
+        <div class="keywords-list" id="keywordsList">
+          <!-- Keywords will be displayed here -->
+        </div>
+
+        <div class="add-keyword-form">
+          <input
+            type="text"
+            id="newKeyword"
+            placeholder="Enter keyword"
+            maxlength="100"
+          >
+          <button id="addKeywordBtn" class="btn btn-primary">Add Keyword</button>
+        </div>
+
+        <div id="keywordError" class="error-message"></div>
+
+        <div class="job-info" id="jobInfo">
+          <p><strong>Last Run:</strong> <span id="lastRun">Never</span></p>
+          <p><strong>Next Run:</strong> <span id="nextRun">Not scheduled</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/dashboard.js"></script>
+</body>
+</html>

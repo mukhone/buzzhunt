@@ -1,0 +1,418 @@
+/* Dashboard Specific Styles */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h2 {
+  color: #333;
+  font-size: 1.8rem;
+}
+
+/* Platforms Grid */
+.platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.platform-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.platform-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.platform-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.platform-icon {
+  font-size: 2rem;
+}
+
+/* SVG Platform Logos */
+.platform-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.platform-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Available platform section - larger logos */
+.available-platform .platform-logo {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+}
+
+/* Modal platform info - medium logos */
+.platform-info .platform-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.platform-title h3 {
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.platform-badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.platform-badge.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.platform-badge.inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Keywords Display */
+.keywords-display {
+  margin-bottom: 15px;
+}
+
+.keywords-display h4 {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.keyword-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 30px;
+}
+
+.keyword-tag {
+  background: #f0ebff;
+  color: #5e17eb;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.keyword-tag .remove-keyword {
+  cursor: pointer;
+  color: #5e17eb;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.keyword-tag .remove-keyword:hover {
+  color: #4c1d95;
+}
+
+.no-keywords {
+  color: #999;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Platform Actions */
+.platform-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.platform-actions .btn {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+/* Job Status */
+.job-status {
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 0.85rem;
+}
+
+.job-status p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.job-status strong {
+  color: #333;
+}
+
+/* Add Platform Section */
+.add-platform-section {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-platform-section h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.available-platforms {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.available-platform {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.available-platform:hover {
+  border-color: #5e17eb;
+  background: #f7f3ff;
+}
+
+.available-platform.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.available-platform.disabled:hover {
+  border-color: #d1d5db;
+  background: transparent;
+}
+
+.available-platform .platform-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.available-platform h4 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.available-platform p {
+  color: #666;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.coming-soon {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+  color: #333;
+  font-size: 1.4rem;
+}
+
+.close {
+  color: #9ca3af;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+  line-height: 1;
+}
+
+.close:hover {
+  color: #4b5563;
+}
+
+.modal-body {
+  padding: 25px;
+}
+
+.platform-info {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.platform-info .platform-icon {
+  font-size: 2rem;
+}
+
+.keywords-list {
+  margin-bottom: 20px;
+  min-height: 50px;
+}
+
+.add-keyword-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.add-keyword-form input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.add-keyword-form input:focus {
+  outline: none;
+  border-color: #5e17eb;
+}
+
+.job-info {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.job-info p {
+  margin: 5px 0;
+  color: #166534;
+  font-size: 0.9rem;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .platforms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .available-platforms {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .platform-actions {
+    flex-direction: column;
+  }
+
+  .add-keyword-form {
+    flex-direction: column;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+}

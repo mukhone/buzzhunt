@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Analytics - BuzzHunt</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+  <link rel="stylesheet" href="/assets/css/analytics.css">
+  <script src="/assets/js/vendor/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <img src="/assets/images/Buzzhuntlogo.svg" alt="BuzzHunt" class="logo-full">
+        <a href="https://mukh.one" class="mukh-brand nav-mukh-brand" target="_blank" rel="noopener noreferrer">
+          <img src="https://mukh.one/assets/landing%20page/1.svg" alt="Mukh.1">
+          <span>by Mukh.1</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/dashboard.html">Platforms</a>
+        <a href="/analytics.html" class="active">Analytics</a>
+      </div>
+      <div class="nav-user">
+        <span id="userEmail"></span>
+        <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Analytics Header -->
+    <div class="analytics-header">
+      <div>
+        <h2>Analytics Dashboard</h2>
+        <p class="subtitle">Track your citations, sources, and trends across all platforms</p>
+      </div>
+      <div class="period-selector">
+        <label for="periodSelect">Time Period:</label>
+        <select id="periodSelect" class="period-select">
+          <option value="daily">Daily</option>
+          <option value="weekly" selected>Weekly</option>
+          <option value="monthly">Monthly</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading analytics...</p>
+    </div>
+
+    <!-- Analytics Content -->
+    <div id="analyticsContent" style="display: none;">
+      <!-- Overview Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-content">
+            <h3 id="totalCitations">0</h3>
+            <p>Total Citations</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌐</div>
+          <div class="stat-content">
+            <h3 id="uniqueDomains">0</h3>
+            <p>Unique Domains</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-content">
+            <h3 id="activePlatforms">0</h3>
+            <p>Active Platforms</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-content">
+            <h3 id="topSourceName">-</h3>
+            <p>Top Source</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platform Filter -->
+      <div class="platform-filter-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h3 style="margin: 0;">Filter by Platform</h3>
+          <div style="background: #f7f3ff; border: 1px solid #d8ccff; border-radius: 0.5rem; padding: 0.75rem 1rem; font-size: 0.9rem; color: #5e17eb;">
+            <strong>💡 Tip:</strong> Select a specific platform below to configure competitor tracking
+          </div>
+        </div>
+        <div id="platformFilters" class="platform-filters">
+          <button class="filter-btn active" data-platform="all">
+            <span>All Platforms</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Competitor Tracking Section -->
+      <div id="competitorSection" class="table-container" style="display: none;">
+        <div class="table-header">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h3>Competitor Intelligence</h3>
+              <p class="table-description">Track competitor mentions in AI responses</p>
+            </div>
+            <button id="configureCompetitorsBtn" class="btn btn-primary">Configure Tracking</button>
+          </div>
+        </div>
+
+        <div id="competitorStats" class="stats-grid" style="margin-bottom: 2rem;">
+          <div class="stat-card">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-content">
+              <h3 id="totalCompetitorMentions">0</h3>
+              <p>Competitor Mentions</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🤝</div>
+            <div class="stat-content">
+              <h3 id="coMentionCount">0</h3>
+              <p>Co-Mentions with You</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">👍</div>
+            <div class="stat-content">
+              <h3 id="positiveMentions">0</h3>
+              <p>Positive Mentions</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">👎</div>
+            <div class="stat-content">
+              <h3 id="negativeMentions">0</h3>
+              <p>Negative Mentions</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="analytics-table">
+            <thead>
+              <tr>
+                <th>Competitor</th>
+                <th>Total Mentions</th>
+                <th>With Your Brand</th>
+                <th>Sentiment</th>
+                <th>Latest Keyword</th>
+                <th>Last Seen</th>
+              </tr>
+            </thead>
+            <tbody id="competitorTableBody">
+              <tr>
+                <td colspan="6" class="text-center">Configure competitor tracking to see insights</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Citation Trends Chart -->
+      <div class="chart-container">
+        <div class="chart-header">
+          <h3>Citation Trends</h3>
+          <p class="chart-description">Track how your citations change over time</p>
+        </div>
+        <canvas id="trendsChart"></canvas>
+      </div>
+
+      <!-- Top Domains Chart -->
+      <div class="chart-container">
+        <div class="chart-header">
+          <h3>Top Citing Domains</h3>
+          <p class="chart-description">Most frequent sources mentioning your keywords</p>
+        </div>
+        <canvas id="domainsChart"></canvas>
+      </div>
+
+      <!-- Source Analysis Table -->
+      <div class="table-container">
+        <div class="table-header">
+          <h3>Source Analysis</h3>
+          <p class="table-description">Detailed breakdown of domains citing your content</p>
+        </div>
+        <div class="table-filters">
+          <select id="categoryFilter" class="filter-select">
+            <option value="">All Categories</option>
+            <option value="News">News</option>
+            <option value="Tech News">Tech News</option>
+            <option value="Business">Business</option>
+            <option value="Industry Publication">Industry Publication</option>
+            <option value="Blog/Community">Blog/Community</option>
+            <option value="Social Media">Social Media</option>
+            <option value="Academic">Academic</option>
+            <option value="Government">Government</option>
+            <option value="Other">Other</option>
+          </select>
+          <select id="authorityFilter" class="filter-select">
+            <option value="">All Authority Levels</option>
+            <option value="High">High Authority</option>
+            <option value="Medium">Medium Authority</option>
+            <option value="Low">Low Authority</option>
+          </select>
+        </div>
+        <div class="table-responsive">
+          <table id="sourcesTable" class="analytics-table">
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th>Category</th>
+                <th>Authority</th>
+                <th>Citations</th>
+                <th>First Seen</th>
+                <th>Last Seen</th>
+              </tr>
+            </thead>
+            <tbody id="sourcesTableBody">
+              <tr>
+                <td colspan="6" class="text-center">No data available</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Recent Mentions -->
+      <div class="table-container">
+        <div class="table-header">
+          <h3>Recent Citations</h3>
+          <p class="table-description">Latest mentions across all platforms</p>
+        </div>
+        <div class="history-filters">
+          <input
+            type="text"
+            id="promptFilter"
+            class="filter-input"
+            placeholder="Filter by prompt..."
+          >
+        </div>
+        <div class="table-responsive">
+          <table class="analytics-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Domain</th>
+                <th>Platform</th>
+                <th>Prompt</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="recentMentionsBody">
+              <tr>
+                <td colspan="6" class="text-center">No recent mentions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- URL History Viewer -->
+      <div class="table-container">
+        <div class="table-header">
+          <h3>URL History</h3>
+          <p class="table-description">Complete history of all discovered URLs</p>
+        </div>
+        <div class="history-filters">
+          <input
+            type="text"
+            id="keywordSearchFilter"
+            class="filter-input"
+            placeholder="Search by keyword..."
+          >
+          <input
+            type="text"
+            id="domainSearchFilter"
+            class="filter-input"
+            placeholder="Filter by domain..."
+          >
+          <button id="applyHistoryFilters" class="btn btn-primary">Apply Filters</button>
+        </div>
+        <div class="table-responsive">
+          <table class="analytics-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Domain</th>
+                <th>Prompt</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody">
+              <tr>
+                <td colspan="5" class="text-center">Loading history...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination" id="historyPagination">
+          <!-- Pagination will be inserted here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Competitor Configuration Modal -->
+  <div id="competitorModal" class="modal" style="display: none;">
+    <div class="modal-content" style="max-width: 600px;">
+      <div class="modal-header">
+        <h2>Configure Competitor Tracking</h2>
+        <button class="modal-close" onclick="closeCompetitorModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Your Brand Name</label>
+          <input type="text" id="yourBrandName" class="form-input" placeholder="e.g., Trello">
+          <p class="input-help">Used to detect co-mentions with competitors</p>
+        </div>
+
+        <div class="form-group">
+          <label>Competitors <span style="color: #666; font-size: 0.9em;">(one per line)</span></label>
+          <textarea id="competitorsText" class="form-input" rows="8" placeholder="Competitor Name | Alias 1, Alias 2, Alias 3
+
+Example:
+Asana | Asana.com, Asana app
+Monday.com | Monday, monday.com
+ClickUp | Click Up, clickup.com"></textarea>
+          <p class="input-help">Format: Competitor Name | Alias1, Alias2, Alias3</p>
+        </div>
+
+        <div class="form-group">
+          <label style="display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" id="enableTracking" checked>
+            <span>Enable competitor tracking</span>
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeCompetitorModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveCompetitorSettings()">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/analytics.js"></script>
+</body>
+</html>
